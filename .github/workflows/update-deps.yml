@@ -38,7 +38,8 @@ jobs:
             "outbounds": [{ "type": "block" }]
           }' > "$CONFIG_PATH"
 
-          docker run --rm -v "$CONFIG_PATH:/etc/sing-box/config.json" sing-box-test run -c /etc/sing-box/config.json | tee output.log
+          # Run docker with a 5-second timeout
+          timeout 5s docker run --rm -v "$CONFIG_PATH:/etc/sing-box/config.json" sing-box-test run -c /etc/sing-box/config.json | tee output.log
 
           if grep -q "sing-box started" output.log; then
             echo "Test Passed"
