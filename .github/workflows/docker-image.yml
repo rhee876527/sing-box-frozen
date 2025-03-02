@@ -5,6 +5,10 @@ on:
   workflow_dispatch:
   schedule:
     - cron: "30 1 11,26 * *" #build bi-monthly
+  workflow_run:  
+    workflows: ["Update Go Dependencies"]
+    types: [completed]
+    outcomes: [success]
 
 jobs:
   login:
