@@ -1,0 +1,55 @@
+name: Update Go Dependencies
+
+on:
+  schedule:
+    - cron: "0 23 * * Wed" # Runs every Wed
+  workflow_dispatch: 
+
+jobs:
+  update-deps:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.23'
+
+      - name: Update Go Modules (Patches Only)
+        run: |
+          go get -u=patch ./...
+          go mod tidy
+          go mod verify  
+
+      - name: Test Docker Image
+        run: docker build -t sing-box-test .
+
+      - name: Test with Configuration
+        run: |
+          set -e
+
+          CONFIG_PATH="${{ github.workspace }}/config.json"
+          echo '{
+            "log": { "level": "info" },
+            "inbounds": [{ "type": "direct" }],
+            "outbounds": [{ "type": "block" }]
+          }' > "$CONFIG_PATH"
+
+          docker run --rm -v "$CONFIG_PATH:/etc/sing-box/config.json" sing-box-test run -c /etc/sing-box/config.json | tee output.log
+
+          if grep -q "sing-box started" output.log; then
+            echo "Test Passed"
+          else
+            echo "Test Failed"
+            exit 1
+          fi
+
+      - name: Commit and Push Changes
+        if: success()
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+          git diff --quiet || (git add go.mod go.sum && git commit -m "chore: update dependencies" && git push)
