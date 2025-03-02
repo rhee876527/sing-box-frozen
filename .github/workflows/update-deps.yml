@@ -38,15 +38,24 @@ jobs:
             "outbounds": [{ "type": "block" }]
           }' > "$CONFIG_PATH"
 
-          # Run docker with a 5-second timeout
-          timeout 5s docker run --rm -v "$CONFIG_PATH:/etc/sing-box/config.json" sing-box-test run -c /etc/sing-box/config.json | tee output.log
+          # Start container in detached mode and get its ID
+          CONTAINER_ID=$(docker run -d --rm -v "$CONFIG_PATH:/etc/sing-box/config.json" sing-box-test run -c /etc/sing-box/config.json)
 
-          if grep -q "sing-box started" output.log; then
-            echo "Test Passed"
-          else
-            echo "Test Failed"
-            exit 1
-          fi
+          # Wait up to 5 seconds for "sing-box started" to appear in logs
+          for i in {1..5}; do
+            sleep 1
+            docker logs "$CONTAINER_ID" > output.log 2>&1
+            if grep -q "sing-box started" output.log; then
+              echo "Test Passed"
+              docker kill "$CONTAINER_ID"
+              exit 0
+            fi
+          done
+
+          # If we reach here, it didn’t start in time
+          echo "Test Failed: 'sing-box started' not found within 5 seconds"
+          docker kill "$CONTAINER_ID"
+          exit 1
 
       - name: Commit and Push Changes
         if: success()
