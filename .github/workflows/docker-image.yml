@@ -32,7 +32,33 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Download pkgrel update artifact
+        if: github.event_name == 'workflow_run'
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: new-updates
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: ./
+
+      - name: Check if artifact exists
+        if: github.event_name == 'workflow_run'
+        run: |
+          if [ -f "push-new-updates.txt" ]; then
+            echo "Artifact found, proceeding with build."
+            echo "BUILD=true" >> $GITHUB_ENV
+          else
+            echo "No artifact found, skipping build."
+            echo "BUILD=false" >> $GITHUB_ENV
+          fi
+
+      - name: Set build flag for non-workflow_run triggers
+        if: github.event_name != 'workflow_run'
+        run: echo "BUILD=true" >> $GITHUB_ENV
+
       - name: Build and push Docker image
+        if: env.BUILD == 'true'
         uses: docker/build-push-action@v5
         with:
           context: .

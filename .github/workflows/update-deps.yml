@@ -22,12 +22,34 @@ jobs:
         run: |
           go get -u=patch ./...
           go mod tidy
-          go mod verify  
+          go mod verify
+          if git status --porcelain go.mod go.sum | grep .; then
+            echo "updates_found=true" >> "$GITHUB_ENV"
+            echo "updates_found=true" > push-new-updates.txt
+          else
+            echo "updates_found=false" >> "$GITHUB_ENV"
+          fi
+          
+      - name: Report status of updates check
+        if: env.updates_found == 'false'
+        run: |
+          echo "No updates found."
+          exit 0
+      
+      - name: Avail pkgrel update artifact
+        if: env.updates_found == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: new-updates
+          path: push-new-updates.txt      
+        
 
       - name: Test Docker Image
+        if: env.updates_found == 'true'
         run: docker build -t sing-box-test .
 
       - name: Test with Configuration
+        if: env.updates_found == 'true'
         run: |
           set -e
 
@@ -39,9 +61,9 @@ jobs:
           }' > "$CONFIG_PATH"
 
           # Start container in detached mode and get its ID
-          CONTAINER_ID=$(docker run -d --rm -v "$CONFIG_PATH:/etc/sing-box/config.json" sing-box-test run -c /etc/sing-box/config.json)
+          CONTAINER_ID=$(docker run -d -v "$CONFIG_PATH:/etc/sing-box/config.json" sing-box-test run -c /etc/sing-box/config.json)
 
-          # Wait up to 5 seconds for "sing-box started" to appear in logs
+          # Wait 5 seconds to check for the logs
           for i in {1..5}; do
             sleep 1
             docker logs "$CONTAINER_ID" > output.log 2>&1
@@ -52,13 +74,12 @@ jobs:
             fi
           done
 
-          # If we reach here, it didn’t start in time
           echo "Test Failed: 'sing-box started' not found within 5 seconds"
           docker kill "$CONTAINER_ID"
           exit 1
 
       - name: Commit and Push Changes
-        if: success()
+        if: env.updates_found == 'true'
         run: |
           git config --global user.name "GitHub Action"
           git config --global user.email "action@github.com"
