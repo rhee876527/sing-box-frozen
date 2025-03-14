@@ -31,12 +31,16 @@ jobs:
           fi
           
       - name: Report status of updates check
-        if: env.updates_found == 'false'
         run: |
-          echo "No updates found."
-          exit 0
+          if [ "${{ env.updates_found }}" = "true" ]; then
+            echo "Updates found."
+            exit 0
+          else
+            echo "No updates found."
+            exit 0
+          fi
       
-      - name: Avail pkgrel update artifact
+      - name: Avail status update artifact
         if: env.updates_found == 'true'
         uses: actions/upload-artifact@v4
         with:
@@ -74,7 +78,7 @@ jobs:
             fi
           done
 
-          echo "Test Failed: 'sing-box started' not found within 5 seconds"
+          echo "Test Failed: 'sing-box started' not found in container logs"
           docker kill "$CONTAINER_ID"
           exit 1
 
