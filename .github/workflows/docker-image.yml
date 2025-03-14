@@ -8,7 +8,6 @@ on:
   workflow_run:  
     workflows: ["Update Go Dependencies"]
     types: [completed]
-    outcomes: [success]
 
 jobs:
   login:
@@ -32,7 +31,7 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Download pkgrel update artifact
+      - name: Download update artifact
         if: github.event_name == 'workflow_run'
         uses: actions/download-artifact@v4
         continue-on-error: true
