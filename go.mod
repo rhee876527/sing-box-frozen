@@ -1,8 +1,8 @@
 module github.com/sagernet/sing-box
 
-go 1.23.0
+go 1.23.1
 
-toolchain go1.23.6
+toolchain go1.23.7
 
 require (
 	berty.tech/go-libtor v1.0.385
@@ -26,8 +26,8 @@ require (
 	github.com/sagernet/cloudflare-tls v0.0.0-20231208171750-a4483c1b7cd1
 	github.com/sagernet/cors v1.2.1
 	github.com/sagernet/fswatch v0.1.1
-	github.com/sagernet/gomobile v0.1.4
-	github.com/sagernet/gvisor v0.0.0-20250217052116-ed66b6946f72
+	github.com/sagernet/gomobile v0.1.5
+	github.com/sagernet/gvisor v0.0.0-20250325023245-7a9c0f5725fb
 	github.com/sagernet/quic-go v0.48.2-beta.1
 	github.com/sagernet/reality v0.0.0-20230406110435-ee17307e7691
 	github.com/sagernet/sing v0.5.2
@@ -54,7 +54,7 @@ require (
 	golang.org/x/sys v0.31.0
 	golang.zx2c4.com/wireguard/wgctrl v0.0.0-20241231184526-a9ab2273dd10
 	google.golang.org/grpc v1.63.3
-	google.golang.org/protobuf v1.36.5
+	google.golang.org/protobuf v1.36.6
 	howett.net/plist v1.0.1
 )
 
@@ -101,7 +101,7 @@ require (
 	golang.org/x/time v0.7.0 // indirect
 	golang.org/x/tools v0.31.0 // indirect
 	golang.zx2c4.com/wintun v0.0.0-20230126152724-0fa3db229ce2 // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20250313205543-e70fdf4c4cb4 // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20250324211829-b45e905df463 // indirect
 	gopkg.in/check.v1 v1.0.0-20200227125254-8fa46927fb4f // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 	lukechampine.com/blake3 v1.3.0 // indirect
