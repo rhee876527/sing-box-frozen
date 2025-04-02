@@ -11,9 +11,9 @@ require (
 	github.com/cretz/bine v0.2.0
 	github.com/go-chi/chi/v5 v5.1.0
 	github.com/go-chi/render v1.0.3
-	github.com/gofrs/uuid/v5 v5.3.1
+	github.com/gofrs/uuid/v5 v5.3.2
 	github.com/insomniacslk/dhcp v0.0.0-20250109001534-8abf58130905
-	github.com/libdns/alidns v1.0.3
+	github.com/libdns/alidns v1.0.4
 	github.com/libdns/cloudflare v0.1.3
 	github.com/logrusorgru/aurora v2.0.3+incompatible
 	github.com/metacubex/tfo-go v0.0.0-20241231083714-66613d49c422
@@ -26,7 +26,7 @@ require (
 	github.com/sagernet/cloudflare-tls v0.0.0-20231208171750-a4483c1b7cd1
 	github.com/sagernet/cors v1.2.1
 	github.com/sagernet/fswatch v0.1.1
-	github.com/sagernet/gomobile v0.1.5
+	github.com/sagernet/gomobile v0.1.6
 	github.com/sagernet/gvisor v0.0.0-20250325023245-7a9c0f5725fb
 	github.com/sagernet/quic-go v0.48.2-beta.1
 	github.com/sagernet/reality v0.0.0-20230406110435-ee17307e7691
