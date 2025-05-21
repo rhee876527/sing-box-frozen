@@ -16,7 +16,7 @@ require (
 	github.com/libdns/alidns v1.0.4
 	github.com/libdns/cloudflare v0.1.3
 	github.com/logrusorgru/aurora v2.0.3+incompatible
-	github.com/metacubex/tfo-go v0.0.0-20250503140532-decbcfccbfdf
+	github.com/metacubex/tfo-go v0.0.0-20250516165257-e29c16ae41d4
 	github.com/mholt/acmez v1.2.0
 	github.com/miekg/dns v1.1.66
 	github.com/ooni/go-libtor v1.1.8
@@ -101,7 +101,7 @@ require (
 	golang.org/x/time v0.7.0 // indirect
 	golang.org/x/tools v0.33.0 // indirect
 	golang.zx2c4.com/wintun v0.0.0-20230126152724-0fa3db229ce2 // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20250512202823-5a2f75b736a9 // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20250519155744-55703ea1f237 // indirect
 	gopkg.in/check.v1 v1.0.0-20200227125254-8fa46927fb4f // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 	lukechampine.com/blake3 v1.3.0 // indirect
