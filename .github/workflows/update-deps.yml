@@ -45,14 +45,6 @@ jobs:
             exit 0
           fi
 
-      - name: Avail status update artifact
-        if: env.updates_found == 'true'
-        uses: actions/upload-artifact@v4
-        with:
-          name: new-updates
-          path: push-new-updates.txt
-
-
       - name: Test Docker Image
         if: env.updates_found == 'true'
         run: docker build -t sing-box-test .
@@ -86,6 +78,13 @@ jobs:
           echo "Test Failed: 'sing-box started' not found in container logs"
           docker kill "$CONTAINER_ID"
           exit 1
+
+      - name: Avail status update artifact
+        if: env.updates_found == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: new-updates
+          path: push-new-updates.txt
 
       - name: Commit and Push Changes
         if: env.updates_found == 'true'
