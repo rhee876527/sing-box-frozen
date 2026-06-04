@@ -10,7 +10,7 @@ require (
 	github.com/go-chi/chi/v5 v5.1.0
 	github.com/go-chi/render v1.0.3
 	github.com/gofrs/uuid/v5 v5.3.2
-	github.com/insomniacslk/dhcp v0.0.0-20260407060928-11b94ed970f2
+	github.com/insomniacslk/dhcp v0.0.0-20260603135910-a415979eb11e
 	github.com/libdns/alidns v1.0.7
 	github.com/libdns/cloudflare v0.1.3
 	github.com/logrusorgru/aurora v2.0.3+incompatible
@@ -46,7 +46,7 @@ require (
 	go.uber.org/zap v1.27.1
 	go4.org/netipx v0.0.0-20231129151722-fdeea329fbba
 	golang.org/x/crypto v0.51.0
-	golang.org/x/exp v0.0.0-20260527015227-08cc5374adb3
+	golang.org/x/exp v0.0.0-20260603202125-055de637280b
 	golang.org/x/mod v0.36.0
 	golang.org/x/net v0.54.0
 	golang.org/x/sys v0.44.0
@@ -72,7 +72,7 @@ require (
 	github.com/google/btree v1.1.3 // indirect
 	github.com/google/go-cmp v0.7.0 // indirect
 	github.com/google/go-querystring v1.1.0 // indirect
-	github.com/google/pprof v0.0.0-20260507013755-92041b743c96 // indirect
+	github.com/google/pprof v0.0.0-20260604005048-7023385849c0 // indirect
 	github.com/hashicorp/yamux v0.1.2 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/josharian/native v1.1.0 // indirect
@@ -84,7 +84,7 @@ require (
 	github.com/mdlayher/socket v0.5.1 // indirect
 	github.com/onsi/ginkgo/v2 v2.11.0 // indirect
 	github.com/onsi/gomega v1.27.10 // indirect
-	github.com/pierrec/lz4/v4 v4.1.26 // indirect
+	github.com/pierrec/lz4/v4 v4.1.27 // indirect
 	github.com/pmezard/go-difflib v1.0.1-0.20181226105442-5d4384ee4fb2 // indirect
 	github.com/quic-go/qpack v0.4.0 // indirect
 	github.com/quic-go/qtls-go1-20 v0.4.1 // indirect
