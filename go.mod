@@ -85,7 +85,7 @@ require (
 	github.com/mdlayher/socket v0.5.1 // indirect
 	github.com/onsi/ginkgo/v2 v2.11.0 // indirect
 	github.com/onsi/gomega v1.27.10 // indirect
-	github.com/pierrec/lz4/v4 v4.1.29 // indirect
+	github.com/pierrec/lz4/v4 v4.1.30 // indirect
 	github.com/pmezard/go-difflib v1.0.1-0.20181226105442-5d4384ee4fb2 // indirect
 	github.com/quic-go/qpack v0.4.0 // indirect
 	github.com/quic-go/qtls-go1-20 v0.4.1 // indirect
@@ -99,11 +99,11 @@ require (
 	go.uber.org/multierr v1.11.0 // indirect
 	golang.org/x/sync v0.23.0 // indirect
 	golang.org/x/text v0.42.0 // indirect
-	golang.org/x/time v0.7.0 // indirect
+	golang.org/x/time v0.14.0 // indirect
 	golang.org/x/tools v0.50.0 // indirect
 	golang.org/x/xerrors v0.0.0-20240903120638-7835f813f4da // indirect
 	golang.zx2c4.com/wintun v0.0.0-20230126152724-0fa3db229ce2 // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20260908043556-f8649ddbbfe6 // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20260911204522-f61a6ca850bd // indirect
 	gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 	lukechampine.com/blake3 v1.3.0 // indirect
