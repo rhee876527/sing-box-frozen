@@ -14,7 +14,7 @@ require (
 	github.com/libdns/alidns v1.0.7
 	github.com/libdns/cloudflare v0.1.3
 	github.com/logrusorgru/aurora v2.0.3+incompatible
-	github.com/metacubex/tfo-go v0.0.0-20260623020846-376a77860b8c
+	github.com/metacubex/tfo-go v0.0.0-20261026151606-08d83ec08c84
 	github.com/mholt/acmez v1.2.0
 	github.com/miekg/dns v1.1.73
 	github.com/ooni/go-libtor v1.1.8
@@ -73,7 +73,7 @@ require (
 	github.com/google/btree v1.1.3 // indirect
 	github.com/google/go-cmp v0.7.0 // indirect
 	github.com/google/go-querystring v1.1.0 // indirect
-	github.com/google/pprof v0.0.0-20261016150608-1facf8f91b50 // indirect
+	github.com/google/pprof v0.0.0-20261026192309-dbd0ed30aa88 // indirect
 	github.com/hashicorp/yamux v0.1.2 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/josharian/native v1.1.0 // indirect
@@ -103,7 +103,7 @@ require (
 	golang.org/x/tools v0.52.0 // indirect
 	golang.org/x/xerrors v0.0.0-20240903120638-7835f813f4da // indirect
 	golang.zx2c4.com/wintun v0.0.0-20230126152724-0fa3db229ce2 // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20261019180522-ce908d29299b // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20261026165753-2ffab32bce7e // indirect
 	gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 	lukechampine.com/blake3 v1.3.0 // indirect
