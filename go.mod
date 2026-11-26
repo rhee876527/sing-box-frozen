@@ -46,7 +46,7 @@ require (
 	go.uber.org/zap v1.27.1
 	go4.org/netipx v0.0.0-20260823151212-3075585bcbeb
 	golang.org/x/crypto v0.59.0
-	golang.org/x/exp v0.0.0-20261118215729-2791e4028fd4
+	golang.org/x/exp v0.0.0-20261124000051-d6646c509b6d
 	golang.org/x/mod v0.43.0
 	golang.org/x/net v0.63.0
 	golang.org/x/sys v0.50.0
@@ -83,7 +83,7 @@ require (
 	github.com/mdlayher/socket v0.5.1 // indirect
 	github.com/onsi/ginkgo/v2 v2.11.0 // indirect
 	github.com/onsi/gomega v1.27.10 // indirect
-	github.com/pierrec/lz4/v4 v4.1.33 // indirect
+	github.com/pierrec/lz4/v4 v4.1.34 // indirect
 	github.com/quic-go/qpack v0.4.0 // indirect
 	github.com/quic-go/qtls-go1-20 v0.4.1 // indirect
 	github.com/sagernet/netlink v0.0.0-20240916134442-83396419aa8b // indirect
@@ -93,13 +93,13 @@ require (
 	github.com/vishvananda/netns v0.0.5 // indirect
 	github.com/zeebo/blake3 v0.2.4 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
-	go.yaml.in/yaml/v3 v3.0.5 // indirect
+	go.yaml.in/yaml/v3 v3.0.6 // indirect
 	golang.org/x/sync v0.25.0 // indirect
 	golang.org/x/text v0.44.0 // indirect
 	golang.org/x/time v0.15.0 // indirect
 	golang.org/x/tools v0.53.0 // indirect
 	golang.org/x/xerrors v0.0.0-20240903120638-7835f813f4da // indirect
 	golang.zx2c4.com/wintun v0.0.0-20230126152724-0fa3db229ce2 // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20261118221215-c8830f628b3f // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20261123191846-1e707ab9fbc2 // indirect
 	lukechampine.com/blake3 v1.3.0 // indirect
 )
